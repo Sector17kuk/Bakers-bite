@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Bakers Bite | Best Bakery in Kurukshetra</title>
+
+<style>
+
+/* =========================
+   GENERAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #fff8f0;
+    color: #3b1f14;
+}
+
+/* =========================
+   TOP MOVING BAR
+========================= */
+
+.top-bar {
+    background: #f4a623;
+    color: #4a170c;
+    padding: 10px 0;
+    overflow: hidden;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.moving-text {
+    white-space: nowrap;
+    display: inline-block;
+    animation: moveText 15s linear infinite;
+}
+
+@keyframes moveText {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    background: linear-gradient(135deg, #4b1710, #7b2d1d);
+    color: white;
+    text-align: center;
+    padding: 55px 20px;
+}
+
+.logo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: auto;
+    border: 5px solid #f4a623;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #fff8f0;
+    color: #5b1d13;
+
+    font-family: Georgia, serif;
+    font-size: 21px;
+    font-weight: bold;
+
+    box-shadow: 0 0 25px rgba(244,166,35,0.6);
+}
+
+header h1 {
+    font-family: Georgia, serif;
+    font-size: 58px;
+    margin-top: 20px;
+    color: #ffd27a;
+}
+
+header p {
+    font-size: 21px;
+    margin-top: 10px;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav {
+    background: #32100b;
+    text-align: center;
+    padding: 17px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+nav a:hover {
+    color: #f4a623;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 500px;
+
+    background:
+    linear-gradient(rgba(65,20,10,0.75), rgba(65,20,10,0.75)),
+    url("https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1600&q=80");
+
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    color: white;
+
+    padding: 30px;
+}
+
+.hero-content h2 {
+    font-size: 55px;
+    font-family: Georgia, serif;
+    color: #ffd27a;
+}
+
+.hero-content p {
+    font-size: 22px;
+    margin: 18px 0 30px;
+}
+
+.button {
+    display: inline-block;
+    background: #f4a623;
+    color: #42140b;
+    padding: 15px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.button:hover {
+    transform: scale(1.08);
+    background: #ffd27a;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+section {
+    padding: 70px 8%;
+}
+
+.section-title {
+    text-align: center;
+    font-family: Georgia, serif;
+    font-size: 42px;
+    color: #702416;
+    margin-bottom: 15px;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #795548;
+    margin-bottom: 40px;
+    font-size: 18px;
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.about {
+    text-align: center;
+    max-width: 900px;
+    margin: auto;
+}
+
+.about p {
+    font-size: 19px;
+    line-height: 1.8;
+}
+
+/* =========================
+   FEATURES
+========================= */
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.feature {
+    background: white;
+    padding: 30px 20px;
+    text-align: center;
+    border-radius: 18px;
+
+    box-shadow: 0 5px 20px rgba(80,30,10,0.12);
+
+    transition: 0.3s;
+}
+
+.feature:hover {
+    transform: translateY(-8px);
+}
+
+.feature-icon {
+    font-size: 45px;
+}
+
+.feature h3 {
+    margin: 15px 0 8px;
+    color: #702416;
+}
+
+/* =========================
+   MENU
+========================= */
+
+.menu-section {
+    background: #f7e8d7;
+}
+
+.menu-container {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.menu-category {
+    margin-bottom: 55px;
+}
+
+.category-title {
+    font-family: Georgia, serif;
+    font-size: 38px;
+    color: #702416;
+    border-bottom: 3px solid #f4a623;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.menu-item {
+    background: white;
+    margin: 10px 0;
+    padding: 17px 20px;
+
+    border-radius: 12px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    box-shadow: 0 3px 10px rgba(70,30,10,0.08);
+
+    transition: 0.25s;
+}
+
+.menu-item:hover {
+    transform: translateX(7px);
+    box-shadow: 0 5px 15px rgba(70,30,10,0.16);
+}
+
+.item-name {
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.prices {
+    color: #8b301f;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.price-label {
+    font-size: 12px;
+    color: #777;
+    margin-right: 5px;
+}
+
+/* =========================
+   CAKE SPECIAL BOX
+========================= */
+
+.cake-note {
+    background: #4b1710;
+    color: white;
+    padding: 25px;
+    border-radius: 18px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.cake-note strong {
+    color: #ffd27a;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact {
+    background: linear-gradient(135deg, #4b1710, #7b2d1d);
+    color: white;
+    text-align: center;
+}
+
+.contact .section-title {
+    color: #ffd27a;
+}
+
+.contact p {
+    font-size: 19px;
+    margin: 12px;
+}
+
+.contact-box {
+    max-width: 700px;
+    margin: 30px auto;
+    background: rgba(255,255,255,0.08);
+    padding: 30px;
+    border-radius: 20px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #24100b;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+footer h2 {
+    color: #ffd27a;
+    font-family: Georgia, serif;
+    margin-bottom: 10px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 800px) {
+
+    header h1 {
+        font-size: 43px;
+    }
+
+    .hero-content h2 {
+        font-size: 38px;
+    }
+
+    .features {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    nav a {
+        margin: 0 6px;
+        font-size: 13px;
+    }
+
+    section {
+        padding: 50px 5%;
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    .features {
+        grid-template-columns: 1fr;
+    }
+
+    .menu-item {
+        padding: 14px;
+    }
+
+    .item-name {
+        font-size: 15px;
+    }
+
+    .prices {
+        font-size: 14px;
+    }
+
+    .section-title {
+        font-size: 34px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- MOVING MESSAGE -->
+
+<div class="top-bar">
+    <div class="moving-text">
+        🍰 BEST BAKERY IN KURUKSHETRA • FRESHLY BAKED • MADE WITH LOVE • ORDER YOUR CAKE TODAY 🎂
+    </div>
+</div>
+
+
+<!-- HEADER -->
+
+<header>
+
+    <div class="logo">
+        Bakers<br>Bite
+    </div>
+
+    <h1>BAKERS BITE</h1>
+
+    <p>Real Authentic Food • A Professional Bakers</p>
+
+</header>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#menu">Menu</a>
+    <a href="#contact">Contact</a>
+
+</nav>
+
+
+<!-- HERO -->
+
+<div class="hero" id="home">
+
+    <div class="hero-content">
+
+        <h2>A Special Cake<br>For A Special Day 🎂</h2>
+
+        <p>
+            Delicious cakes, pastries & desserts made to make
+            your special moments sweeter.
+        </p>
+
+        <a href="#menu" class="button">
+            Explore Our Menu
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+    <h2 class="section-title">
+        Welcome to Bakers Bite
+    </h2>
+
+    <p class="section-subtitle">
+        Your destination for delicious bakery treats in Kurukshetra
+    </p>
+
+    <div class="about">
+
+        <p>
+            At <strong>Bakers Bite</strong>, we believe every celebration
+            deserves something delicious. From beautifully designed cakes
+            to fresh pastries, muffins and desserts, we prepare every
+            treat with care and quality ingredients.
+        </p>
+
+        <br>
+
+        <p>
+            Whether it is a birthday, anniversary, party or simply a
+            craving for something sweet — Bakers Bite is here to make
+            your day a little more special.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- FEATURES -->
+
+<section>
+
+    <h2 class="section-title">
+        Why Choose Bakers Bite?
+    </h2>
+
+    <p class="section-subtitle">
+        Sweetness you can trust ❤️
+    </p>
+
+
+    <div class="features">
+
+        <div class="feature">
+
+            <div class="feature-icon">🎂</div>
+
+            <h3>Fresh Cakes</h3>
+
+            <p>
+                Freshly prepared cakes for every occasion.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">🍰</div>
+
+            <h3>Delicious Taste</h3>
+
+            <p>
+                Made to give you a memorable taste.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">🧁</div>
+
+            <h3>Wide Variety</h3>
+
+            <p>
+                Cakes, pastries, desserts and muffins.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">❤️</div>
+
+            <h3>Made With Love</h3>
+
+            <p>
+                Every order is prepared with care.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- MENU -->
+
+<section class="menu-section" id="menu">
+
+    <h2 class="section-title">
+        Our Menu
+    </h2>
+
+    <p class="section-subtitle">
+        Fresh • Delicious • Made For You
+    </p>
+
+
+    <div class="menu-container">
+
+
+        <!-- CAKES -->
+
+        <div class="menu-category">
+
+            <h3 class="category-title">
+                🎂 Cakes
+            </h3>
+
+            <div class="cake-note">
+                <strong>Half KG &nbsp; | &nbsp; One KG</strong><br>
+                Choose your favourite flavour and make your celebration special!
+            </div>
+
+
+            <div class="menu-item">
+                <span class="item-name">Pineapple Cake</span>
+                <span class="prices">₹340 / ₹660</span>
+            </div>
+
+            <div class="menu-item">
+                <span class="item-name">Vanilla Cake</span>
+                <span class="prices">₹340 / ₹660</span>
+            </div>
+
+            <div class="menu-item">
+                <span class="item-name">Mango Cake</span>
+                <span class="prices">₹340 / ₹660</span>
+            </div>
+
+            <div class="menu-item">
+                <span class="item-name">Strawberry Cake</span>
+                <span class="prices">₹340 / ₹660</span>
+            </div>
+
+            <div class="menu-item">
+                <span class="item-name">Butter Scotch Cake</span>
+                <span class="prices">₹360 / ₹680</span>
+            </div>
+
+            <div class="menu-item">
+                <span class="item-name">Choco Vanilla Cake</span>
+                <span class="prices">₹360 / ₹680</span>
+            </div>
+
+            <div class="menu-item">
+                <span class="item-name">Choco Strawberry Cake</span>
+                <span class="prices">₹360 / ₹680</span>
+            </div>
+
+            <div class="menu-item">
+                <span class="item-name">Choco Butter Scotch Cake</span>
+                <span class="prices">₹360 / ₹680</span>
+            </div>
+
+            <div class="menu-item">
+                <span class="item-name">Black Forest Cake</span>
+                <span class="prices">₹380 / ₹720</span>
+            </div>
+
+            <div class="menu-item">
+                <span class="item-name">Light Chocolate Cake</span>
+                <span class="prices">₹380 / ₹720</span>
+            </div>
+
+            <div class="menu-item">
+                <span class="item-name">Vanilla Chips Cake</span>
+                <span class="prices">₹380 / ₹720</span>
+            </div>
+
+            <div class="menu-item">
+                <span class="item-name">Caramel Cake</span>
+                <span class="prices">₹380 / ₹720</span>
+            </div>
+
+            <div class="menu-item">
+                <span class="item-name">Choco Crunch Cake</span>
+                <span class="prices">₹380 / ₹720</span>
+            </div>
+
+            <div class="menu-item">
+                <span class="item-name">White Forest Cake</span>
+                <span class="prices">₹380 / ₹720</span>
+            </div>
+
+            <div class="menu-item">
+                <span class="item-name">Paan Flavor Cake</span>
+                <span class="prices">₹400 / ₹750</span>
+            </div>
+
+            <div class="menu-item">
+                <span class="item-name">Coffee Cake</span>
+                <span class="prices">₹400 / ₹750</span>
+            </div>
+
+            <div class="menu-item">
+                <span class="item-name">Kitket Cake</span>
+                <span class="prices">₹450 / ₹850</span>
+            </div>
+
+            <div class="menu-item">
+                <span class="item-name">Cassata Cake</span>
+                <span class="prices">₹450 / ₹850</span>
+            </div>
+
+            <div class="menu-item">
+                <span class="item-name">Truffle Cake</span>
+                <span class="prices">₹400 / ₹750</span>
+            </div>
+
+            <div class="menu-item">
+                <span class="item-name">Red Velvet Cake</span>
+                <span class="prices">₹400 / ₹750</span>
+            </div>
+
+            <div class="menu-item">
+                <span class="item-name">Blueberry Cake</span>
+                <span class="prices">₹450 / ₹850</span>
+            </div>
+
+            <div class="menu-item">
+                <span class="item-name">Mix Fruit Cake</span>
+                <span class="prices">₹450 / ₹850</span>
+            </div>
+
+            <div class="menu-item">
+                <span class="item-name">Oreo Cake</span>
+                <span class="prices">₹450 / ₹850</span>
+            </div>
+
+            <div class="menu-item">
+                <span class="item-name">Death By Chocolate Cake</span>
+                <span class="prices">₹450 / ₹850</span>
+            </div>
+
+            <div class="menu-item">
+                <span class="item-name">Mud Cake</span>
+                <span class="prices">₹450 / ₹850</span>
+            </div>
+
+            <div class="menu-item">
+                <span class="item-name">Choco Red Velvet Cake</span>
+                <span class="prices">₹450 / ₹850</span>
+            </div>
+
+            <div class="menu-item">
+                <span class="item-name">Choco Walnut Cake</span>
+                <span class="prices">₹550 / ₹980</span>
+            </div>
+
+            <div class="menu-item">
+                <span class="item-name">Rasmalai Cake</span>
+                <span class="prices">₹500 / ₹950</span>
+            </div>
+
+        </div>
+
+
+        <!-- PASTRIES -->
+
+        <div class="menu-category">
+
+            <h3 class="category-title">
+                🍰 Pastries
+            </h3>
+
+            <div class="menu-item">
+                <span class="item-name">Pineapple Pastry</span>
+                <span class="prices">₹60</span>
+            </div>
+
+            <div class="menu-item">
+                <span class="item-name">Black Forest Pastry</span>
+                <span class="prices">₹70</span>
+            </div>
+
+            <div class="menu-item">
+                <span class="item-name">Butter Scotch Pastry</span>
+                <span class="prices">₹70</span>
+            </div>
+
+            <div class="menu-item">
+                <span class="item-name">Choco Crunch Pastry</span>
+                <span class="prices">₹70</span>
+            </div>
+
+            <div class="menu-item">
+                <span class="item-name">White Forest Pastry</span>
+                <span class="prices">₹70</span>
+            </div>
+
+            <div class="menu-item">
+                <span class="item-name">Red Velvet Pastry</span>
+                <span class="prices">₹80</span>
+            </div>
+
+            <div class="menu-item">
+                <span class="item-name">Choco Truffle Pastry</span>
+                <span class="prices">₹80</span>
+            </div>
+
+            <div class="menu-item">
+                <span class="item-name">Death By Chocolate Pastry</span>
+                <span class="prices">₹90</span>
+            </div>
+
+            <div class="menu-item">
+                <span class="item-name">Blue Berry Pastry</span>
+                <span class="prices">₹90</span>
+            </div>
+
+            <div class="menu-item">
+                <span class="item-name">Chocolate Red Velvet Pastry</span>
+                <span class="prices">₹90</span>
+            </div>
+
+        </div>
+
+
+        <!-- DESSERTS -->
+
+        <div class="menu-category">
+
+            <h3 class="category-title">
+                🍫 Desserts
+            </h3>
+
+            <div class="menu-item">
+                <span class="item-name">Chocolate Ball</span>
+                <span class="prices">₹30</span>
+            </div>
+
+            <div class="menu-item">
+                <span class="item-name">Choco Lava Cup Cake</span>
+                <span class="prices">₹40</span>
+            </div>
+
+            <div class="menu-item">
+                <span class="item-name">Chocolate Doughnut</span>
+                <span class="prices">₹60</span>
+            </div>
+
+            <div class="menu-item">
+                <span class="item-name">Choco Walnut Brownie</span>
+                <span class="prices">₹70</span>
+            </div>
+
+            <div class="menu-item">
+                <span class="item-name">Choco Walnut Pie</span>
+                <span class="prices">₹90</span>
+            </div>
+
+        </div>
+
+
+        <!-- MUFFINS -->
+
+        <div class="menu-category">
+
+            <h3 class="category-title">
+                🧁 Muffins
+            </h3>
+
+            <div class="menu-item">
+                <span class="item-name">Vanilla Muffin</span>
+                <span class="prices">₹40</span>
+            </div>
+
+            <div class="menu-item">
+                <span class="item-name">Tutti Frutti Muffin</span>
+                <span class="prices">₹40</span>
+            </div>
+
+            <div class="menu-item">
+                <span class="item-name">Choco Chips Muffin</span>
+                <span class="prices">₹50</span>
+            </div>
+
+            <div class="menu-item">
+                <span class="item-name">Choco Walnut Muffin</span>
+                <span class="prices">₹50</span>
+            </div>
+
+            <div class="menu-item">
+                <span class="item-name">Blueberry Muffin</span>
+                <span class="prices">₹50</span>
+            </div>
+
+            <div class="menu-item">
+                <span class="item-name">Red Velvet Muffin</span>
+                <span class="prices">₹50</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+    <h2 class="section-title">
+        Visit Bakers Bite ❤️
+    </h2>
+
+    <div class="contact-box">
+
+        <p>📍 <strong>Kurukshetra, Haryana</strong></p>
+
+        <p>🎂 Fresh Cakes • Pastries • Desserts • Muffins</p>
+
+        <p>📞 Contact us to order your favourite cake</p>
+
+        <br>
+
+        <!-- Replace # with your actual WhatsApp link -->
+
+        <a href="#" class="button">
+            Order Your Cake 🎂
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <h2>🍰 BAKERS BITE</h2>
+
+    <p>
+        A Special Cake For A Special Day
+    </p>
+
+    <br>
+
+    <p>
+        © 2026 Bakers Bite • Kurukshetra
+    </p>
+
+</footer>
+
+
+</body>
+</html>
